@@ -74,7 +74,7 @@ def tokenize(line):
 def parse_options():
     parser = argparse.ArgumentParser(description='Image-based Vulnerability Detection.')
     parser.add_argument('-i', '--input',
-                        default='/data/pxyang/AdvRVD/datasets/reveal1/train/pdgs/Vul',
+                        default='../datasets/reveal1/train/pdgs/Vul',
                         help='The path of a dir which consists of some dot_files')
     args = parser.parse_args()
     return args
@@ -92,7 +92,7 @@ def generate_corpus(dot):
     if pdg is None:
         return
     labels_dict = nx.get_node_attributes(pdg, 'label')
-    with open('/data/pxyang/AdvRVD/datasets/reveal1/corpus.txt', 'a') as f:
+    with open('../datasets/reveal1/corpus.txt', 'a') as f:
         for label, all_code in labels_dict.items():
             code = all_code[all_code.index(",") + 1:-2].split('\\n')[0]
             code = code.replace("static void", "void")
@@ -123,10 +123,10 @@ if __name__ == '__main__':
         finally:
             elapsed_time = time.time() - start_time  # 计算总时间
             timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-            log_time("/data/pxyang/AdvRVD/total_time_log.txt",
+            log_time("../total_time_log.txt",
                      f"{timestamp} - Total execution time: {elapsed_time:.2f} seconds")
 # out = tokenize('VAR2->VAR9')
 # print(out)
 #
-# generate_corpus("/data/pxyang/win_linux_mapping/three_fusion/data2/reveal1/cfgs/pdgs/1000_1.dot")
+# generate_corpus("../datasets/reveal/cfgs/pdgs/1000_1.dot")
 

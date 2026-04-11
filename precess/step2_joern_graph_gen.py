@@ -15,9 +15,9 @@ def log_time(log_file, message):
 def parse_options():
     parser = argparse.ArgumentParser(description='Extracting Cpgs')
     parser.add_argument('-i', '--input', help='The dir path of input', type=str,
-                        default='/data/pxyang/AdvRVD/datasets/megavul/train/bins/Vul')
+                        default='../datasets/megavul/train/bins/Vul')
     parser.add_argument('-o', '--output', help='The dir path of output', type=str,
-                        default='/data/pxyang/AdvRVD/datasets/megavul/train/pdgs/Vul')
+                        default='../datasets/megavul/train/pdgs/Vul')
     parser.add_argument('-t', '--type', help='The type of procedures: parse or export', type=str, default='parse')
     parser.add_argument('-r', '--repr', help='The type of representation: pdg or lineinfo_json', type=str,
                         default='pdg')
@@ -100,8 +100,8 @@ def joern_export(bin, outdir, repr):
 
 
 def main():
-    # joern_path = '/data/pxyang/win_linux_mapping/devign/joern/joern-cli'
-    joern_path = '/data/pxyang/joern-cli'
+    # joern_path = 'joern-cli'
+    joern_path = 'joern-cli'
     os.chdir(joern_path)
     args = parse_options()
     type = args.type
@@ -151,6 +151,6 @@ if __name__ == '__main__':
     finally:
         elapsed_time = time.time() - start_time  # 计算总时间
         timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-        log_time("/data/pxyang/AdvRVD/total_time_log.txt",
+        log_time("../total_time_log.txt",
                  f"{timestamp} - Total execution time: {elapsed_time:.2f} seconds")
 

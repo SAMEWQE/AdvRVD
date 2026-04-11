@@ -27,10 +27,10 @@ def log_time(log_file, message):
 def parse_options():
     parser = argparse.ArgumentParser(description='Image-based Vulnerability Detection.')
     parser.add_argument('-i', '--input',
-                        default='/root/shared-nvme/pxyang/AdvRVD/datasets/megavul/valid/channel_vec/Vul',
+                        default='../datasets/megavul/valid/channel_vec/Vul',
                         help='The path of output.', required=False)
     parser.add_argument('-o', '--out',
-                        default='/root/shared-nvme/pxyang/AdvRVD/datasets/megavul/valid/images/Vul',
+                        default='../datasets/megavul/valid/images/Vul',
                         help='The path of output.', required=False)
     parser.add_argument('-f', '--fusion_mode',
                         default='add_sent_base',  # 新增融合模式参数
@@ -178,6 +178,6 @@ if __name__ == '__main__':
     finally:
         elapsed_time = time.time() - start_time  # 计算总时间
         timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-        log_time("/data/pxyang/AdvRVD/total_time_log.txt",
+        log_time("../total_time_log.txt",
                  f"{timestamp} - Total execution time: {elapsed_time:.2f} seconds")
 

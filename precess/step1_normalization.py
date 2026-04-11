@@ -7,7 +7,7 @@ from clean_gadget import clean_gadget
 
 def parse_options():
     parser = argparse.ArgumentParser(description='Normalization.')
-    parser.add_argument('-i', '--input', default='/home/pod/shared-nvme/pxyang/AdvRVD/datasets/reveal/valid',
+    parser.add_argument('-i', '--input', default='../datasets/reveal/valid',
  help='The dir path of input dataset', type=str, required=False)
     args = parser.parse_args()
     return args
@@ -95,5 +95,5 @@ def main():
     
 
 if __name__ == '__main__':
-    # pro_one_file('/home/pod/shared-nvme/pxyang/win_linux_mapping/Adversarial_Reprogramming-master/datasets/vuldeepecker/train/No-Vul/Good59369.c')
+    # pro_one_file('../datasets/vuldeepecker/train/No-Vul/Good59369.c')
     main()

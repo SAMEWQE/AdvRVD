@@ -30,9 +30,9 @@ def load_data(filename):
 
 def parse_options():
     parser = argparse.ArgumentParser(description='Generate and split train dataset data with optional SMOTE.')
-    parser.add_argument('-i', '--input', default='/data/pxyang/AdvRVD/datasets/reveal/valid/images',
+    parser.add_argument('-i', '--input', default='../datasets/reveal/valid/images',
                         help='The path of a dir which consists of some pkl_files')
-    parser.add_argument('-o', '--out', default='/data/pxyang/AdvRVD/datasets/bigvul/',
+    parser.add_argument('-o', '--out', default='../datasets/bigvul/',
                         help='The path of output.', required=False)
     parser.add_argument('-t', '--type', default='valid.pkl', required=False)
     parser.add_argument('--enable-smote', action='store_true',
@@ -332,7 +332,7 @@ if __name__ == '__main__':
     finally:
         elapsed_time = time.time() - start_time  # 计算总时间
         timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-        log_time("/data/pxyang/AdvRVD/total_time_log.txt",
+        log_time("../total_time_log.txt",
                  f"{timestamp} - Total execution time: {elapsed_time:.2f} seconds")
 
 

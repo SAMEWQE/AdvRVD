@@ -36,7 +36,7 @@ def sentence_embedding(sentence):
     # global sent2vec_model
     sent2vec_model = sent2vec.Sent2vecModel()
     sent2vec_model.load_model(
-        '/data/bhtian2/win_linux_mapping/Adversarial_Reprogramming-master/datasets/vulcnn/data_model.bin')
+        '../../datasets/vulcnn/data_model.bin')
     emb = sent2vec_model.embed_sentence(sentence)
     return emb[0]
 
@@ -64,4 +64,4 @@ def image_generation(dot):
 
 
 if __name__ == '__main__':
-    image_generation("/data/bhtian2/win_linux_mapping/three_fusion/data2/d2a/cfgs/pdgs/1000_1.dot")
+    image_generation("../../datasets/d2a/cfgs/pdgs/1000_1.dot")

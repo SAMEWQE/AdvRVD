@@ -30,14 +30,14 @@ line = LINE(dimension=128, walk_length=30, walk_num=200, batch_size=1000, negati
 def parse_options():
     parser = argparse.ArgumentParser(description='Image-based Vulnerability Detection.')
     parser.add_argument('-i', '--input',
-                        default='/data/pxyang/AdvRVD/datasets/d2a1/valid/pdgs/No-Vul',
+                        default='../datasets/d2a1/valid/pdgs/No-Vul',
                         help='The path of a dir which consists of some dot_files')
     parser.add_argument('-o', '--out',
-                        default='/data/pxyang/AdvRVD/datasets/d2a1/valid/channel_vec/No-Vul',
+                        default='../datasets/d2a1/valid/channel_vec/No-Vul',
                         help='The path of output.', required=False)
     parser.add_argument('-m', '--model',
-                        # default='/data/pxyang/win_linux_mapping/VulCNN/sent2vec/devign_model_Chk3.ckpt.bin',
-                        default='/data/pxyang/AdvRVD/sent2vec/d2a1_model.bin',
+                        # default='../sent2vec/devign_model_Chk3.ckpt.bin',
+                        default='../sent2vec/d2a1_model.bin',
                         help='The path of model.', required=False)
     args = parser.parse_args()
     return args

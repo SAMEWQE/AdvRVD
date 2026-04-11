@@ -1,7 +1,7 @@
 # -*- coding:utf-8 -*-
 # Enhanced Adversarial Reprogramming with Visualization and Early Stopping
 # Created Time: Thu 05 Jul 2018 10:00:41 PM CST
-# Author: Taihong Xiao <xiaotaihong@126.com>
+
 import numpy as np
 from config_primevul import get_config
 import torch
@@ -217,8 +217,8 @@ class Adversarial_Reprogramming(object):
         pathname = pathname + "/" if pathname[-1] != "/" else pathname
         #train_df = self.load_data(pathname + "train.pkl")  # 使用修复后的原始训练集
         #eval_df = self.load_data(pathname + "valid.pkl")   # 使用修复后的原始验证集
-        train_df = self.load_data('/data/pxyang/AdvRVD/datasets/primevul/train.pkl')  # 使用修复后的原始训练集
-        eval_df = self.load_data('/data/pxyang/AdvRVD/datasets/primevul/valid.pkl')  # 使用修复后的原始验证集
+        train_df = self.load_data('./datasets/primevul/train.pkl')  # 使用修复后的原始训练集
+        eval_df = self.load_data('./datasets/primevul/valid.pkl')  # 使用修复后的原始验证集
 
         # print(train_df['label'].value_counts())
         # print(eval_df['label'].value_counts())

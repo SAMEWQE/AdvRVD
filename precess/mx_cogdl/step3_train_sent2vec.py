@@ -68,13 +68,13 @@ def tokenize(line):
 def parse_options():
     parser = argparse.ArgumentParser(description='Image-based Vulnerability Detection.')
     parser.add_argument('-i', '--input',
-                        default='/data/bhtian2/win_linux_mapping/Adversarial_Reprogramming-master/datasets/d2a/train/pdgs/Vul',
+                        default='../../datasets/d2a/train/pdgs/Vul',
                         help='The path of a dir which consists of some dot_files')
     parser.add_argument('-o', '--out',
-                        default='/data/bhtian2/win_linux_mapping/Adversarial_Reprogramming-master/datasets/d2a/train/corpus.txt',
+                        default='../../datasets/d2a/train/corpus.txt',
                         help='The path of output.', required=False)
     parser.add_argument('-m', '--model',
-                        default='/data/bhtian2/win_linux_mapping/Adversarial_Reprogramming-master/datasets/vulcnn/data_model.bin',
+                        default='../../datasets/vulcnn/data_model.bin',
                         help='The path of model.', required=False)
     args = parser.parse_args()
     return args
@@ -87,7 +87,7 @@ def graph_extraction(dot):
 def generate_corpus(dot):
     pdg = graph_extraction(dot)
     labels_dict = nx.get_node_attributes(pdg, 'label')
-    with open('/data/bhtian2/win_linux_mapping/Adversarial_Reprogramming-master/datasets/d2a/train/corpus.txt', 'a') as f:
+    with open('../../datasets/d2a/train/corpus.txt', 'a') as f:
         for label, all_code in labels_dict.items():
             code = all_code[all_code.index(",") + 1:-2].split('\\n')[0]
             code = code.replace("static void", "void")
@@ -123,4 +123,4 @@ if __name__ == '__main__':
     # out = tokenize('VAR2->VAR9')
     # print(out)
     #
-    # generate_corpus("/data/bhtian2/win_linux_mapping/three_fusion/data2/d2a/cfgs/pdgs/1000_1.dot")
+    # generate_corpus("../../datasets/d2a/cfgs/pdgs/1000_1.dot")

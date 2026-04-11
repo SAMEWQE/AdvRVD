@@ -1,7 +1,7 @@
 # -*- coding:utf-8 -*-
 # Enhanced Adversarial Reprogramming with Visualization and Early Stopping
 # Created Time: Thu 05 Jul 2018 10:00:41 PM CST
-# Author: Taihong Xiao <xiaotaihong@126.com>
+
 import numpy as np
 import importlib
 import torch
@@ -84,10 +84,10 @@ class Adversarial_Reprogramming(object):
                 
                 # 确保 dataset_path 存在且正确
                 if not hasattr(cfg, 'dataset_path'):
-                    cfg.dataset_path = f'/data/pxyang/AdvRVD/datasets/{dataset_name}'
+                    cfg.dataset_path = f'./datasets/{dataset_name}'
                     print(f"   🔧 自动添加 dataset_path: {cfg.dataset_path}")
                 elif dataset_name not in cfg.dataset_path:
-                    cfg.dataset_path = f'/data/pxyang/AdvRVD/datasets/{dataset_name}'
+                    cfg.dataset_path = f'./datasets/{dataset_name}'
                     print(f"   🔧 自动修正 dataset_path: {cfg.dataset_path}")
                 
                 # 确保早停参数存在（使用默认值）

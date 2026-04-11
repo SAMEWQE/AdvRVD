@@ -3,7 +3,7 @@ import os
 from sklearn.model_selection import train_test_split
 
 # 使用匿名项目内的绝对路径以防路径错误
-base_dir = '/data/pxyang/AdvRVD/AdvRVD_Anonymous/datasets'
+base_dir = '../datasets'
 datasets = ['d2a', 'devign', 'reveal']
 
 for ds in datasets:

@@ -78,7 +78,7 @@ class ModelEvaluator:
                 if not hasattr(cfg, 'dataset_name'):
                     cfg.dataset_name = dataset_name
                 if not hasattr(cfg, 'dataset_path'):
-                    cfg.dataset_path = f'/data/pxyang/AdvRVD/datasets/{dataset_name}'
+                    cfg.dataset_path = f'./datasets/{dataset_name}'
                 if not hasattr(cfg, 'use_gpu'):
                     cfg.use_gpu = True
                 if not hasattr(cfg, 'gpu_id'):
