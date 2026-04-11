@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.py[cod]
+*~
+*.so
+.Python
+env/
+venv/
+.venv/
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Generated Source Code files (avoid bloating GitHub with 50,000+ tiny .c files)
+datasets/*/train/
+datasets/*/val/
+datasets/*/test/
+
+# You can un-comment below to ignore giant CSVs if they exceed GitHub 100MB limit
+# datasets/*/*.csv
+# datasets/*/*.pkl
+
+# VS Code
+.vscode/
+
+# Logs
+*.log
+total_time_log.txt
