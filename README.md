@@ -58,12 +58,12 @@ python evaluate.py --dataset reveal --restore ./train_log_reveal/W_best.pt
 
 The essential dependencies carefully extracted from our environment are:
 - **Python** (>= 3.8)
-- **PyTorch** (`torch==2.9.0`, `torchvision==0.24.0`)
-- **Graph & Embeddings**: `dgl==2.1.0`, `cogdl==0.6`, `gensim==4.4.0`
-- **Deep Learning / NLP**: `transformers==4.51.3`, `timm==1.0.15`
-- **Data Science**: `scikit-learn==1.5.2`, `pandas==2.2.3`, `numpy==1.26.4`, `networkx==3.5`
-- **Imbalance Handling**: `imbalanced-learn==0.12.4`
-- **Parsing**: `tree-sitter==0.20.4`
+- **PyTorch** (`torch>=2.9.0`, `torchvision>=0.24.0`)
+- **Graph & Embeddings**: `dgl>=2.1.0`, `cogdl>=0.6`, `gensim>=4.4.0`
+- **Deep Learning / NLP**: `transformers>=4.51.3`, `timm>=1.0.15`
+- **Data Science**: `scikit-learn>=1.5.2`, `pandas>=2.2.3`, `numpy>=1.26.4`, `networkx>=3.5`
+- **Imbalance Handling**: `imbalanced-learn>=0.12.4`
+- **Parsing**: `tree-sitter>=0.20.4`
 - **Joern** (for structural Code Property Graph extraction)
 
 > *Note: Please see `requirements.txt` for the full comprehensive list of environment packages.*
