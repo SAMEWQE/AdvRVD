@@ -17,10 +17,10 @@ Our data processing is fully automated and modularized under the `precess/` dire
 - `split_dataset.py`: Implements Stratified 8:1:1 Sampling, slicing the raw vulnerability dataset into `train`, `val`, and `test` CSVs while preserving exact positive/negative label ratios.
 - `step0_preprocess.py`: Extracts raw C code according to the 8:1:1 CSV splits into structured `.c` source code files.
 - `step1_normalization.py`: Normalizes the source code (removing comments, standardizing formats).
-- `step2_joern_graph_gen.py`: Generates Code Property Graphs (CPG, PDG) using Joern.
-- `step3_train_sent2vec.py`: Trains node embeddings.
-- `step4_ImageGeneration.py`: Converts code graphs/embeddings into spatial image representations.
-- `step4.5_ChannelsGeneration.py`: Further enhances image channels for the adversarial framework.
+- `step2_joern_graph_gen.py`: Parses C code to extract Program Dependence Graphs (PDG) using Joern.
+- `step3_train_sent2vec.py`: Trains Sent2Vec node embeddings representing semantics.
+- `step4_ImageGeneration.py`: Extracts multi-view graph structural features (incorporating Node2Vec, DeepWalk, LINE) to prepare comprehensive node vectors.
+- `step4.5_ChannelsGeneration.py`: Fuses semantic and structural features and aligns them into multi-channel (e.g., 3-channel) spatial image representations for the vision model.
 - `step5_generate_train_test_data.py`: Assembles the final `.pkl` tensors for fast GPU loading.
 
 ## 🚀 Training & Evaluation
