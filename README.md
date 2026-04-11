@@ -1,6 +1,10 @@
-# AdvRVD: Enhanced Adversarial Reprogramming for Vulnerability Detection
+# Towards Data-Efficient Vulnerability Detection with Code Semantic Images and Adversarial Reprogramming
 
-This repository contains the official PyTorch implementation for **AdvRVD**, a framework that applies Enhanced Adversarial Reprogramming to adapt pre-trained image models for the task of Source Code Vulnerability Detection. 
+This repository contains the official PyTorch implementation for **AdvRVD** (Adversarial Reprogramming for Vulnerability Detection).
+
+**AdvRVD** is a novel cross-modal framework designed for data-efficient vulnerability detection, particularly in few-shot scenarios. It transforms source code into multi-channel semantic images  and employs **Adversarial Reprogramming** to repurpose powerful, pre-trained Computer Vision  models *without* fine-tuning their backbones. 
+
+This paradigm shift enables highly data-efficient detection, significantly outperforming state-of-the-art approaches on D2A, Devign, and Reveal datasets with only a fraction of the trainable parameters.
 
 
 ## 📊 Datasets & Distribution
