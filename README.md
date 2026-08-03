@@ -17,9 +17,9 @@ To ensure robustness, the model is evaluated on three prominent vulnerability da
 
 | Dataset | #Vulnerable | #Non-Vulnerable | Vul_Ratio |
 | --- | ---: | ---: | ---: |
-| D2A | 2,795 | 2,444 | 53.35% |
-| Devign | 12,460 | 14,858 | 45.61% |
-| Reveal | 2,240 | 20,494 | 9.85% |
+| [D2A](https://github.com/IBM/D2A) | 2,795 | 2,444 | 53.35% |
+| [Devign](https://github.com/microsoft/CodeXGLUE/tree/main/Code-Code/Defect-detection) | 12,460 | 14,858 | 45.61% |
+| [ReVeal](https://github.com/VulDetProject/ReVeal) | 2,240 | 20,494 | 9.85% |
 
 
 *All dataset partitions are provided in standard CSV formats within the `datasets/` directory.*
