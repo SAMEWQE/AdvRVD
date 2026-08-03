@@ -4,6 +4,12 @@ This repository contains the official PyTorch implementation for **SIGAR** (Adve
 
 **SIGAR** is a novel cross-modal framework designed for data-efficient vulnerability detection, particularly in few-shot scenarios. It transforms source code into multi-channel semantic images  and employs **Adversarial Reprogramming** to repurpose powerful, pre-trained Computer Vision  models *without* fine-tuning their backbones. 
 
+## Framework Overview
+
+![SIGAR framework](assets/sigar-framework.png)
+
+*Overview of SIGAR: PDG extraction, code semantic image generation, and adversarial-reprogramming-based vulnerability detection.*
+
 
 ## 📊 Datasets & Distribution
 
