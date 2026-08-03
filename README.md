@@ -15,11 +15,38 @@ This repository contains the official PyTorch implementation for **SIGAR** (Adve
 
 To ensure robustness, the model is evaluated on three prominent vulnerability datasets. We have strictly applied a **Stratified 8:1:1 Split (Train : Validation : Test)** to maintain an identical ratio of vulnerable vs. non-vulnerable samples across all subsets.
 
-| Dataset | #Vulnerable | #Non-Vulnerable | Vul_Ratio |
-| --- | ---: | ---: | ---: |
-| [D2A](https://github.com/IBM/D2A) | 2,795 | 2,444 | 53.35% |
-| [Devign](https://github.com/microsoft/CodeXGLUE/tree/main/Code-Code/Defect-detection) | 12,460 | 14,858 | 45.61% |
-| [ReVeal](https://github.com/VulDetProject/ReVeal) | 2,240 | 20,494 | 9.85% |
+The dataset names in the following table link to their original data sources.
+
+<table align="center">
+  <thead>
+    <tr>
+      <th>Dataset</th>
+      <th align="right">#Vulnerable</th>
+      <th align="right">#Non-Vulnerable</th>
+      <th align="right">Vul_Ratio</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="https://github.com/IBM/D2A">D2A</a></td>
+      <td align="right">2,795</td>
+      <td align="right">2,444</td>
+      <td align="right">53.35%</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/microsoft/CodeXGLUE/tree/main/Code-Code/Defect-detection">Devign</a></td>
+      <td align="right">12,460</td>
+      <td align="right">14,858</td>
+      <td align="right">45.61%</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/VulDetProject/ReVeal">ReVeal</a></td>
+      <td align="right">2,240</td>
+      <td align="right">20,494</td>
+      <td align="right">9.85%</td>
+    </tr>
+  </tbody>
+</table>
 
 
 *All dataset partitions are provided in standard CSV formats within the `datasets/` directory.*
