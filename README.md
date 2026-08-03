@@ -1,13 +1,19 @@
-# Towards Data-Efficient Vulnerability Detection with Code Semantic Images and Adversarial Reprogramming
+# SIGAR: Data-Efficient Vulnerability Detection via Semantic Image Generation and Adversarial Reprogramming
 
-This repository contains the official PyTorch implementation for **AdvRVD** (Adversarial Reprogramming for Vulnerability Detection).
+This repository contains the official PyTorch implementation for **SIGAR** (Adversarial Reprogramming for Vulnerability Detection).
 
-**AdvRVD** is a novel cross-modal framework designed for data-efficient vulnerability detection, particularly in few-shot scenarios. It transforms source code into multi-channel semantic images  and employs **Adversarial Reprogramming** to repurpose powerful, pre-trained Computer Vision  models *without* fine-tuning their backbones. 
+**SIGAR** is a novel cross-modal framework designed for data-efficient vulnerability detection, particularly in few-shot scenarios. It transforms source code into multi-channel semantic images  and employs **Adversarial Reprogramming** to repurpose powerful, pre-trained Computer Vision  models *without* fine-tuning their backbones. 
 
 
 ## 📊 Datasets & Distribution
 
 To ensure robustness, the model is evaluated on three prominent vulnerability datasets. We have strictly applied a **Stratified 8:1:1 Split (Train : Validation : Test)** to maintain an identical ratio of vulnerable vs. non-vulnerable samples across all subsets.
+
+| Dataset | #Vulnerable | #Non-Vulnerable | Vul_Ratio |
+| --- | ---: | ---: | ---: |
+| D2A | 2,795 | 2,444 | 53.35% |
+| Devign | 12,460 | 14,858 | 45.61% |
+| Reveal | 2,240 | 20,494 | 9.85% |
 
 
 *All dataset partitions are provided in standard CSV formats within the `datasets/` directory.*

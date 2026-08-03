@@ -267,12 +267,14 @@ class Adversarial_Reprogramming(object):
                                                             shuffle=True, **kwargs)
             self.test_loader = torch.utils.data.DataLoader(test_set,
                                                            batch_size=self.cfg.batch_size_per_gpu * len(self.gpu),
-                                                           shuffle=True, **kwargs)
+                                                           shuffle=False, num_workers=kwargs['num_workers'],
+                                                           pin_memory=kwargs['pin_memory'], drop_last=False)
         else:
             self.train_loader = torch.utils.data.DataLoader(train_set, batch_size=self.cfg.batch_size_per_gpu,
                                                             shuffle=True, **kwargs)
             self.test_loader = torch.utils.data.DataLoader(test_set, batch_size=self.cfg.batch_size_per_gpu,
-                                                           shuffle=True, **kwargs)
+                                                           shuffle=False, num_workers=kwargs['num_workers'],
+                                                           pin_memory=kwargs['pin_memory'], drop_last=False)
 
     def calculate_class_weights(self,labels):
         total_samples = len(labels)
@@ -393,9 +395,9 @@ class Adversarial_Reprogramming(object):
             self.BCE = torch.nn.CrossEntropyLoss()
             self.loss_type = 'crossentropy'
         else:
-            print("🔧 Using BCE Loss") 
-            print("📊 Loss Function: torch.nn.BCELoss()")
-            self.BCE = torch.nn.BCELoss()
+            print("🔧 Using BCEWithLogits Loss") 
+            print("📊 Loss Function: torch.nn.BCEWithLogitsLoss()")
+            self.BCE = torch.nn.BCEWithLogitsLoss()
             self.loss_type = 'bce'
         
         # 输出详细配置信息
@@ -777,6 +779,10 @@ STATUS:
                     self.loss = self.compute_loss(self.out, label)
                     self.optimizer.zero_grad()
                     self.loss.backward()
+                    torch.nn.utils.clip_grad_norm_(
+                        filter(lambda p: p.requires_grad, self.Program.parameters()),
+                        max_norm=1.0
+                    )
                     self.optimizer.step()
                     # 累加损失
                     total_loss += self.loss.item()
